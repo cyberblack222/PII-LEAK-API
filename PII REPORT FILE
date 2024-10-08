@@ -1,0 +1,12 @@
+it was a public (BBP) programme with wildcard domain like (*.target.com) in scope 
+First i start Reconnaissance collect all the subdomains and filter these subdomains with httpx and httprobe tool .After that i collect all the urls from gau and waybackurls 
+After manually check all the live subdomains i first try subdomain takeover but no luck then i make a note of all the subdomains and urls which i think that was contain some sensitive information .
+I first make two accounts on that subdomain and check Access control issues and idors and capture all the requests in burpsuite but i found nothing
+Then i go to burp histroy - tab i found a (GET Request “https://rdp.target.com/api/users/info/en”)in response it was giving user_id, email,phone-no. etc of the user .
+I take it and and delete “/info” and /en” send it to the intruder tab with “https://rdp.target.com/api/users/$a$” and start fuzzing it after it completes
+I found one endpoint data which give me 302 .
+After that i start thinking about it why it redirects i took the request send it to the repeater tab i add “?id=my user id ” parameter at the end of url like “https://rdp.target.com/api/users/data?id=my user id” in response it show same as first url 
+After changing id of my second account it gives all the user information of my 2nd user_id and changeing another id it gives user_id ,email ,phone_no etc of the user.
+
+##CONCLUSION 
+-THIS VULNERABILITY HIGHLIGHTS THE NEED FOR IMPROVED SECURITY MEASURES TO PROTECT USER DATA..
