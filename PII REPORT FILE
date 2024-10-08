@@ -1,4 +1,5 @@
-             HOw I FOUND (PII-Leak ) WITH P1 CRITICAL 
+             HOW I FOUND (PII-Leak ) WITH P1 CRITICAL 
+
 It was a public (BBP) programme with wildcard domain like (*.target.com) in scope 
 First i start Reconnaissance collect all the subdomains and filter these subdomains with httpx and httprobe tool .After that i collect all the urls from gau and waybackurls 
 After manually check all the live subdomains i first try subdomain takeover but no luck then i make a note of all the subdomains and urls which i think that was contain some sensitive information .
